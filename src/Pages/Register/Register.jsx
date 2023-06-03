@@ -36,10 +36,17 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="Password" {...register("password", { required: true, minLength: 6, maxLength: 20 })} placeholder="password" className="input input-bordered" />
+                                <input type="Password" {...register("password", {
+                                    required: true,
+                                    minLength: 6,
+                                    maxLength: 20,
+                                    pattern: / (?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
+                                })} placeholder="password" className="input input-bordered" />
 
-                                {errors.password && <span className=" mt-2 text-rose-300">Password must be 6 digit</span>}
+                                {/* {errors.password && <span className=" mt-2 text-rose-300">Password must be 6 digit</span>} */}
+                                {errors.password?.type === 'minLength' && <p className=" mt-2 text-rose-300">Password must be 6 digit</p>}
                                 {errors.password?.type === 'required' && <p className=" text-red-500">Password is required</p>}
+                                {errors.password?.type === 'pattern' && <p className=" text-red-500">Password must have captial small letter </p>}
                                 <label className="label">
 
 
