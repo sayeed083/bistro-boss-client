@@ -14,8 +14,8 @@ const Register = () => {
         console.log(data);
             createUser(data.email, data.password)
             .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
+                const createdTheUser = result.user;
+                console.log(createdTheUser);
             })
 
     };

@@ -1,6 +1,16 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavBar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { });
+
+    }
 
     // For Share items on multiple purpose
     const navOptions = <>
@@ -8,9 +18,21 @@ const NavBar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Our Menu</Link></li>
         <li><Link to="/order/dessert">Order Food</Link></li>
-        <li><Link to="/login">Log In</Link></li>
-        
+
+
         <li><a>Item 3</a></li>
+
+        {
+            user
+                ?
+                <>
+                    <button onClick={handleLogOut} className="btn btn-outline btn-success">LogOut</button>
+                </>
+                :
+                <>
+                    <li><Link to="/login">Log In</Link></li>
+                </>
+        }
 
     </>
     return (
