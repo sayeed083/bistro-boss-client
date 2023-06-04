@@ -1,6 +1,7 @@
 import { FaCalendarAlt, FaHome, FaShoppingCart, FaWallet } from "react-icons/fa";
-import { Link, Outlet } from "react-router-dom";
-
+import { NavLink, Outlet } from "react-router-dom";
+import { CgMenuLeftAlt } from "react-icons/cg";
+import { MdFoodBank } from "react-icons/md";
 
 const Dashboard = () => {
     return (
@@ -16,12 +17,23 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
                     {/* Sidebar content here */}
-                    <li><Link><FaHome></FaHome>User Home</Link></li>
-                    <li><Link><FaCalendarAlt></FaCalendarAlt>Reservation</Link></li>
-                    <li><Link><FaWallet></FaWallet>Payment History</Link></li>
-                    <li><Link><FaShoppingCart></FaShoppingCart>My Cart</Link></li>
+                    <li><NavLink to="/dashboard/user_home"><FaHome></FaHome>User Home</NavLink></li>
+
+                    <li><NavLink to="/dashboard/reservation"><FaCalendarAlt></FaCalendarAlt>Reservation</NavLink></li>
+
+                    <li><NavLink to="/dashboard/history"><FaWallet></FaWallet>Payment History</NavLink></li>
+
+                    <li><NavLink to="/dashboard/mycart"><FaShoppingCart></FaShoppingCart>My Cart</NavLink></li>
+
                     <div className="divider">OR</div>
-                    <li><Link to="/"><FaHome></FaHome>Home</Link></li>
+
+
+                    <li><NavLink to="/"><FaHome></FaHome>Home</NavLink></li>
+
+                    <li><NavLink to="/menu"><CgMenuLeftAlt></CgMenuLeftAlt> Our Menu</NavLink></li>
+
+                    <li><NavLink to="/order/dessert"> <MdFoodBank></MdFoodBank> Order Food</NavLink></li>
+
                 </ul>
 
             </div>
