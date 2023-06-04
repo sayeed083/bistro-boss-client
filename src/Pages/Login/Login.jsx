@@ -3,7 +3,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import { useEffect } from "react";
 // import { useRef } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
@@ -12,6 +12,10 @@ const Login = () => {
     // const captchaRef = useRef(null)
     const { signIn } = useContext(AuthContext)
     const [disabled, setDisabled] = useState(true)
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || "/";
     useEffect(() => {
         loadCaptchaEnginge(6);
     }, [])
@@ -22,10 +26,12 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         signIn(email, password)
-        .then(result => {
-            const loggedInUser = result.user;
-            console.log(loggedInUser);
-        })
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                navigate(from, { replace: true });
+            })
+
     }
     const handleValidateCaptcha = e => {
         const user_captcha_value = e.target.value;

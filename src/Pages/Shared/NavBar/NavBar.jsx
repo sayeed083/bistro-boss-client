@@ -18,6 +18,13 @@ const NavBar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Our Menu</Link></li>
         <li><Link to="/order/dessert">Order Food</Link></li>
+        <li><Link to="/allfoods">All Foods</Link></li>
+        <li><Link to="/">
+            <button className="btn">
+                Cart
+                <div className="badge badge-secondary">+0</div>
+            </button>
+            </Link></li>
 
 
         <li><a>Item 3</a></li>
