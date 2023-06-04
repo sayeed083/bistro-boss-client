@@ -4,6 +4,8 @@ import { AuthContext } from '../providers/AuthProvider';
 const useCart = () => {
     const { user } = useContext(AuthContext)
 
+    // TanStack Query Use
+
     const { refetch, data: cart = [] } = useQuery({
         queryKey: ['cart', user?.email],
         queryFn: async () => {

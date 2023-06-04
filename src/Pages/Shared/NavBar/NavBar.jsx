@@ -21,7 +21,7 @@ const NavBar = () => {
         <li><Link to="/menu">Our Menu</Link></li>
         <li><Link to="/order/dessert">Order Food</Link></li>
         <li><Link to="/allfoods">All Foods</Link></li>
-        <li><Link to="/">
+        <li><Link to="/dashboard/mycart">
             <button className="btn">
                 Cart
                 <div className="badge badge-secondary">+{cart?.length || 0}</div>
@@ -29,7 +29,7 @@ const NavBar = () => {
         </Link></li>
 
 
-        <li><a>Item 3</a></li>
+        {/* <li><Link></Link></li> */}
 
         {
             user
