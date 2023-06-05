@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 const Register = () => {
 
@@ -115,6 +116,7 @@ const Register = () => {
                                     <input className="btn btn-primary" type="submit" value="Register" />
                                 </div>
                                 <p><small>Already Have An Account? <Link to="/login">Please Login</Link></small></p>
+                                <SocialLogin></SocialLogin>
                             </form>
                         </div>
                     </div>

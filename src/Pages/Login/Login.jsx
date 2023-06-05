@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 const Login = () => {
 
@@ -81,6 +82,7 @@ const Login = () => {
                                 <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
                             </div>
                             <p><small>No Account? <Link to="/register">Please Register!</Link></small></p>
+                            <SocialLogin></SocialLogin>
                         </form>
                     </div>
                 </div>
