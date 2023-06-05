@@ -3,6 +3,7 @@ import {
   } from "react-router-dom";
 import Dashboard from "../Layouts/Dashboard";
 import Main from "../Layouts/Main";
+import AddItem from "../Pages/DashBoard/AddItem/AddItem";
 import AllUsers from "../Pages/DashBoard/AllUsers/AllUsers";
 import MyCart from "../Pages/DashBoard/MyCart/MyCart";
 import Home from "../Pages/Home/Home/Home";
@@ -11,6 +12,7 @@ import Menu from "../Pages/Menu/Menu/Menu";
 import Orders from "../Pages/Orders/Orders/Orders";
 import Register from "../Pages/Register/Register";
 import AllFoods from "../Pages/Shared/AllFoods/AllFoods";
+import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 
 
@@ -58,6 +60,10 @@ import PrivateRoute from "./PrivateRoute";
           path: "allusers",
           element: <AllUsers></AllUsers>
         },
+        {
+          path: "addItem",
+          element: <AdminRoute><AddItem></AddItem></AdminRoute>
+        }
       ]
     }
   ]);

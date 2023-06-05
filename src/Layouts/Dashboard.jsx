@@ -28,7 +28,7 @@ const Dashboard = () => {
                                 {/* Sidebar content here */}
                                 <li><NavLink to="/dashboard/user_home"><FaHome></FaHome>Admin Home</NavLink></li>
 
-                                <li><NavLink to="/dashboard/reservation"><FaCalendarAlt></FaCalendarAlt>Add Items</NavLink></li>
+                                <li><NavLink to="/dashboard/addItem"><FaCalendarAlt></FaCalendarAlt>Add Items</NavLink></li>
 
                                 <li><NavLink to="/dashboard/history"><FaWallet></FaWallet>Manage Items</NavLink></li>
                                 <li><NavLink to="/dashboard/history"><CgMenuLeftAlt></CgMenuLeftAlt>Manage Bookings</NavLink></li>
