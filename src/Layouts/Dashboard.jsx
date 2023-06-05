@@ -3,10 +3,12 @@ import { NavLink, Outlet } from "react-router-dom";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { MdFoodBank } from "react-icons/md";
 import useCart from "../hooks/useCart";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
     const [cart] = useCart();
-    const isadmin = true;
+    // const isAdmin = true;
+    const [isAdmin] = useAdmin()
     return (
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -21,7 +23,7 @@ const Dashboard = () => {
                 <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
 
                     {
-                        isadmin ?
+                        isAdmin ?
                             <>
                                 {/* Sidebar content here */}
                                 <li><NavLink to="/dashboard/user_home"><FaHome></FaHome>Admin Home</NavLink></li>
