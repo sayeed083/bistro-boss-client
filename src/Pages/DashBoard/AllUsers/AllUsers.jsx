@@ -9,6 +9,9 @@ const AllUsers = () => {
         return res.json();
     })
 
+    const handleUpdateUserRole = id => {
+        
+    }
     const handleDelete = user => {
 
     }
@@ -37,7 +40,7 @@ const AllUsers = () => {
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td>{user.role === 'admin' ? 'admin' :
-                                <button className="btn btn-ghost bg-orange-600 text-white"><FaUserShield></FaUserShield></button>
+                                <button onClick={() => handleUpdateUserRole(user._id)} className="btn btn-ghost bg-orange-600 text-white"><FaUserShield></FaUserShield></button>
 
                             }</td>
                             <td>
