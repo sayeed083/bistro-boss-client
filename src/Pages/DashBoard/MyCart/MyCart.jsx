@@ -7,6 +7,8 @@ const MyCart = () => {
     const [cart, refetch] = useCart()
     //How Does Reduce Work ?
     const total = cart.reduce((sum, item) => item.price + sum, 0)
+    
+    
 
 
     const handleDelete = item => {
@@ -47,7 +49,7 @@ const MyCart = () => {
             </div>
             <div className="overflow-x-auto w-[720px]">
                 <table className="table w-full">
-                    {/* head */}
+                   
                     <thead>
                         <tr>
                             <th>
